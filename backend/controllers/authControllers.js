@@ -49,7 +49,7 @@ const authController = {
             admin: user.admin
         },
             process.env.JWT_ACCESS_KEY,
-            { expiresIn: "30s" }
+            { expiresIn: "20s" }
         );
     },
     //GENERATE REFRESH TOKEN
@@ -165,7 +165,7 @@ const authController = {
                 from: process.env.EMAIL_USER,
                 to: email,
                 subject: 'For Reset Password',
-                html: '<p> Hii ' + username + ', Please copy the link and <a href="http://localhost:8000/v1/auth/reset-password?token=' + token + '"> reset your password </a>'
+                html: '<p> Hii ' + username + ', Please copy the link and <a href="http://localhost:8000/v1/auth/reset-password/' + token + '"> reset your password </a>'
             }
             transporter.sendMail(mailOptions, function (err, info) {
                 if (err) {
@@ -183,12 +183,13 @@ const authController = {
 
     reset_password: async (req, res) => {
         try {
+            const id = req.params.id;
             const salt2 = await bcrypt.genSalt(10);
             const hashedNewPassword = await bcrypt.hash(req.body.password, salt2);
-            const token = req.query.token;
-            const tokenData = await User.findOne({ token: token });
-            if (tokenData) {
-                const userData = await User.findByIdAndUpdate({ _id: tokenData.id }, { $set: { password: hashedNewPassword, token: '' } }, { new: true })
+
+            const idData = await User.findOne({ _id: id });
+            if (idData) {
+                const userData = await User.findByIdAndUpdate({ _id: idData.id }, { $set: { password: hashedNewPassword } }, { new: true })
                 res.status(200).send({ success: false, msg: "User password has been reset ", data: userData });
             }
             else {

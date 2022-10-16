@@ -19,17 +19,20 @@ const NavBar = () => {
   }
   return (
     <nav className="navbar-container">
-      <Link to="/" className="navbar-home"> Home </Link>
+
       {user ? (
         <>
           <p className="navbar-user">Hi, <span> {user.username} </span> </p>
+          <Link to="/" className="navbar-home"> Home </Link>
+          <Link to="/change-password" className="navbar-reset-password">Change password</Link>
           <Link to="/logout" className="navbar-logout" onClick={handleLogout}> Log out</Link>
         </>
       ) : (
         <>
+          <Link to="/" className="navbar-home"> Home </Link>
           <Link to="/login" className="navbar-login"> Login </Link>
           <Link to="/register" className="navbar-register"> Register</Link>
-          <Link to="/reset-password" className="navbar-reset-password"></Link>
+
         </>
       )}
     </nav>

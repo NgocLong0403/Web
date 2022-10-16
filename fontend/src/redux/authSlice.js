@@ -20,7 +20,7 @@ const authSlice = createSlice({
         },
         newPassword: {
             isFetching: false,
-            passwordReset: false,
+            passwordReset: null,
             error: false,
         }
     },
@@ -75,13 +75,17 @@ const authSlice = createSlice({
             state.forgotPassword.error = true;
         },
         resetPasswordStart: (state) => {
-
+            state.newPassword.isFetching = true;
         },
-        reserPasswordSuccess: (state) => {
-
+        reserPasswordSuccess: (state, action) => {
+            state.newPassword.isFetching = false;
+            state.newPassword.error = false;
+            state.newPassword.success = action.payload;
         },
         resetPasswordFailed: (state) => {
-
+            state.newPassword.isFetching = false;
+            state.newPassword.error = true;
+            state.newPassword.success = null;
         },
 
     }
