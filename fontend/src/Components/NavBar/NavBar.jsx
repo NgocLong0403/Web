@@ -22,7 +22,7 @@ const NavBar = () => {
 
       {user ? (
         <>
-          <p className="navbar-user">Hi, <span> {user.username} </span> </p>
+          <p className="navbar-user">Hello, <span> {user.username} </span> </p>
           <Link to="/" className="navbar-home"> Home </Link>
           <Link to="/change-password" className="navbar-reset-password">Change password</Link>
           <Link to="/logout" className="navbar-logout" onClick={handleLogout}> Log out</Link>

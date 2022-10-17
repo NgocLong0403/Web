@@ -17,7 +17,7 @@ const ChangePassword = (id) => {
     console.log("id", id);
     return (
         <section className="login-container">
-            <div className="login-title"> Log in</div>
+            <div className="login-title"> Change Password</div>
             <form onSubmit={handleChangePassowrd}>
                 <label>New password</label>
                 <input type="password" placeholder="Enter your new password"
@@ -26,7 +26,7 @@ const ChangePassword = (id) => {
                 <input type="password" placeholder="Enter your confirm new password"
                 />
 
-                <button type='submit'>Continue</button>
+                <button type='submit'>Submit</button>
             </form>
 
         </section>

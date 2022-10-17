@@ -1,21 +1,11 @@
-a.navbar-home:hover{
-    background-color: gray;
-    border-radius: 6px;
-}
-a.navbar-login:hover{
-    background-color: gray;
-    border-radius: 6px;
-}
-a.navbar-register:hover{
-    background-color: gray;
-    border-radius: 6px;
-}
+
 .navbar-container{
     display: flex;
     padding: 1rem 1.5rem;
     justify-content: flex-end;
     background-color: rgb(228, 228, 228);
     align-items: center;
+    font-family: cursive;
 }
 .navbar-container > *{
     margin: 0 1.25rem;
@@ -24,26 +14,82 @@ a.navbar-register:hover{
     color:rgb(0, 99, 230);
 }
 
+
 .navbar-home{
-    color:rgb(163, 162, 162);
+    color:rgb(35, 31, 31);
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+
+
 }
+a.navbar-home:hover{
+    background-color: rgb(118, 109, 109);
+    border-radius: 6px;
+}
+
+
+
 .navbar-login {
-    color:rgb(163, 162, 162);
-    
+    color:rgb(35, 31, 31);
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+
+
 }
+a.navbar-login:hover{
+    background-color: gray;
+    border-radius: 6px;
+}
+
+
+
+
 .navbar-reset-password{
-    color:rgb(163, 162, 162);
+    color:rgb(35, 31, 31);
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+
 }
+a.navbar-reset-password:hover{
+    background-color: gray;
+    border-radius: 6px;
+}
+
+
+
+
 .navbar-register{
-    color:rgb(163, 162, 162);
-    /* background-color: rgb(150, 150, 150);
-    padding:0.35rem;
-    border-radius: 6px; */
+    color:rgb(35, 31, 31);
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+
 }
+a.navbar-register:hover{
+    background-color: gray;
+    border-radius: 6px;
+}
+
+
+
+.navbar-logout {
+    color:rgb(35, 31, 31);
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+
+
+}
+a.navbar-logout:hover{
+    background-color: gray;
+    border-radius: 6px;
+}
+
+
+
 .navbar-user{
     color: rgb(0, 154, 165);
-}
-.navbar-logout {
-    color:rgb(156, 156, 156);
-    padding:0.35rem;
 }

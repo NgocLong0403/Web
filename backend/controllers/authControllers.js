@@ -190,7 +190,7 @@ const authController = {
             const idData = await User.findOne({ _id: id });
             if (idData) {
                 const userData = await User.findByIdAndUpdate({ _id: idData.id }, { $set: { password: hashedNewPassword } }, { new: true })
-                res.status(200).send({ success: false, msg: "User password has been reset ", data: userData });
+                res.status(200).send({ success: true, msg: "User password has been reset ", data: userData });
             }
             else {
                 res.status(200).send({ success: false, msg: "this link has been expired. " });
